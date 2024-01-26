@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'SignUp.dart';
 import 'Validation.dart';
+import 'SucessfulVal.dart';
+import 'UnsucessfulVal.dart';
+import 'LogIn.dart';
+import 'ForgotPassword.dart';
+import 'ChangePassword.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

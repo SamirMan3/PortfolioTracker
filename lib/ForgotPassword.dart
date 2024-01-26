@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatelessWidget {
+class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,34 +36,46 @@ class LoginForm extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: 312,
-                height: 48,
-                margin: EdgeInsets.symmetric(vertical: 8),
-                decoration: ShapeDecoration(
-                  color: Colors.white.withOpacity(0.08),
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(width: 1, color: Colors.black.withOpacity(0.4)),
-                    borderRadius: BorderRadius.circular(10),
+              SizedBox(height: 20),
+              Text(
+                'Enter Your Email',
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.7),
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(height: 30),
+              SizedBox(
+                width: 300,
+                child: Text(
+                  'The verification code will be sent to your email address.',
+                  style: TextStyle(
+                    color: Color(0xFFB5B5B5),
+                    fontSize: 18,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               GestureDetector(
                 onTap: () {
-                  // Handle login
+                  // Handle continue
                 },
                 child: Container(
                   width: 298,
                   height: 43,
                   margin: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   decoration: BoxDecoration(
                     color: Color(0xFF0D63D1),
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(100),
                   ),
                   child: Center(
                     child: Text(
-                      'Log in',
+                      'Continue',
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.9),
                         fontSize: 14,
@@ -72,40 +84,6 @@ class LoginForm extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Don’t have an account? ',
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.8),
-                      fontSize: 14,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    'Signup',
-                    style: TextStyle(
-                      color: Color(0xFF2F89FC),
-                      fontSize: 14,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20),
-              Text(
-                'By logging in, you agree to our \nterms and conditions and privacy policy. ',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black.withOpacity(0.8),
-                  fontSize: 11,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],
