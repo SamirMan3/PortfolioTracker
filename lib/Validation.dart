@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/SucessfulVal.dart'; // Assuming this is the correct import
 
 class Validation extends StatelessWidget {
   @override
@@ -16,26 +17,55 @@ class Validation extends StatelessWidget {
               Positioned(
                 left: 31,
                 top: 541,
-                child: Container(
-                  width: 298,
-                  height: 43,
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF0D63D1),
-                    borderRadius: BorderRadius.circular(70),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Confirm',
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                        fontSize: 14,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
+                child: Stack(
+                  children: [
+                    Container(
+                      width: 298,
+                      height: 43,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF0D63D1),
+                        borderRadius: BorderRadius.circular(70),
+                      ),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SuccessfulVerification()),
+                          );
+                        },
+                        child: SizedBox(
+                          width: double.infinity, // Ensure the text fills the button horizontally
+                          child: Center(
+                            child: Text(
+                              'Confirm',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.9),
+                                fontSize: 14,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                    // Confirm Text
+                    Positioned.fill(
+                      child: Center(
+                        child: Text(
+                          'Confirm',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.9),
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               // Title

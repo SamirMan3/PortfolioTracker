@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatelessWidget {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Validation.dart';
 
 class MySignUpScreen extends StatelessWidget {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 360,
       height: 800,
-      clipBehavior: Clip.antiAlias,
+      clipBehavior: Clip.antiAlias, 
       decoration: const BoxDecoration(color: Colors.white),
       child: Stack(
         children: [
@@ -118,77 +124,80 @@ class MySignUpScreen extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            left: 294,
-            top: 419,
-            child: Container(
-              width: 24,
-              height: 24,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage("https://via.placeholder.com/24x24"),
-                  fit: BoxFit.fill,
+          // Positioned(
+          //   left: 294,
+          //   top: 419,
+          //   child: Container(
+          //     width: 24,
+          //     height: 24,
+          //     decoration: const BoxDecoration(
+          //       image: DecorationImage(
+          //         image: NetworkImage("https://via.placeholder.com/24x24"),
+          //         fit: BoxFit.fill,
+          //       ),
+          //     ),
+          //   ),
+          // ),
+             Positioned(
+              left: 32,
+              top: 188,
+              child: Container(
+                width: 312,
+                child: TextField(
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    hintText: 'Enter Your Email',
+                  ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            left: 36,
-            top: 424,
-           child: Text(
-              'Confirm Your Password',
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.7),
-                fontSize: 12,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
+            Positioned(
+              left: 32,
+              top: 260,
+              child: Container(
+                width: 312,
+                child: TextField(
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter your Username',
+                  ),
+                ),
               ),
             ),
-          ),
-          Positioned(
-            left: 38,
-            top: 350,
-            child: Text(
-              'Enter your Password',
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.7),
-                fontSize: 12,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
+            Positioned(
+              left: 32,
+              top: 334,
+              child: Container(
+                width: 312,
+                child: TextField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'Enter your Password',
+                  ),
+                ),
               ),
             ),
-          ),
-          Positioned(
-            left: 32,
-            top: 203,
-            child: Text(
-              'Enter your Email',
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.7),
-                fontSize: 12,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
+            Positioned(
+              left: 32,
+              top: 407,
+              child: Container(
+                width: 312,
+                child: TextField(
+                  controller: _confirmPasswordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'Confirm Password',
+                  ),
+                ),
               ),
             ),
-          ),
-          Positioned(
-            left: 38,
-            top: 277,
-            child: Text(
-              'Enter Your Username',
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.7),
-                fontSize: 12,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
           Positioned(
             left: 137,
             top: 105,
             child: Text(
-              'Signup',
+              'Sign up',
               style: TextStyle(
                 color: Colors.black.withOpacity(0.8),
                 fontSize: 24,
@@ -208,23 +217,33 @@ class MySignUpScreen extends StatelessWidget {
   }
 }
 
+
+
 class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 131, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 3),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         color: const Color(0xFF0D63D1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       ),
-      child: Text(
-        'Signup',
-        style: TextStyle(
-          color: Colors.white.withOpacity(0.9),
-          fontSize: 14,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w600,
+      child: TextButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Validation()),
+          );
+        },
+        child: Text(
+          'Sign up',
+          style: TextStyle(
+            color: Colors.white.withOpacity(0.9),
+            fontSize: 14,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );
